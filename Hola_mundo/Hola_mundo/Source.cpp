@@ -68,9 +68,27 @@ int receta()
 
 int terms()
 {
-	cout << "Esta es la seccion FAQ o preguntas y respuestas de la receta" << endl;
-	cout << "---Que es carne picada?- Son solo trozos de carne que puedes cortar tu mismo del bisteq" << endl;
-	cout << "---Que es freir?- Es cuando pones algo en aceite caliente para que quede tostado o dorado" << endl;
+	cout << "Esta es la seccion FAQ o preguntas y respuestas" << endl;
+	cout << "---Que es //?- Es para poner comentarios en el programa" << endl;
+	cout << "---Que es <<?- Es un operador para el cout " << endl;
+	cout << "---Que es C++?- Es un lenguaje de programación" << endl;
+	cout << "---Que es comment?- Para describir cual es la intención del programa" << endl;
+	cout << "---Que es compiler?- Un programa para poder ejecutar el programa" << endl;
+	cout << "---Que es compile-time error?- Error de compilación, revise bien su programa" << endl;
+	cout << "---Que es cout?- Es una abreviación de character output stream" << endl;
+	cout << "---Que es executable?- Es lo que la computadora lee y ejecuta" << endl;
+	cout << "---Que es function?- Termino para referirse a las funciones de un programa, ejemplo: main " << endl;
+	cout << "---Que es header?- Contiene definiciones de terminos" << endl;
+	cout << "---Que es IDE?- Entorno de desarrollo integrado" << endl;
+	cout << "---Que es #include?- Para poder incluir una libreria al programa " << endl;
+	cout << "---Que es library?- Es el termino que se refiere a un conjunto de implementaciones funcionales" << endl;
+	cout << "---Que es linker?- Para juntar nuestros objetos del codigo en el ejecutable " << endl;
+	cout << "---Que es main()?- Es la función principal obligatoria para que el programa compile" << endl;
+	cout << "---Que es object code?- Es lo que la computadora ejecuta" << endl;
+	cout << "---Que es output?- Es lo que el programa muestra de lo que le pidas" << endl;
+	cout << "---Que es program?- Es todo el codigo que creaste" << endl;
+	cout << "---Que es source code?- Es lo que uno como programador lee y escribe" << endl;
+	cout << "---Que es statement?- Una parte de C++ que especifica una acción y no es un #include" << endl;
 	cin.get();
 	return 0;
 }
