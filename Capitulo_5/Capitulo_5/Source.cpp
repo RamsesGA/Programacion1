@@ -555,43 +555,72 @@ void ejercicios()
 	cout << "-------------------------------\n";
 	//14
 	cout << "-------------------------------\n";
-	string Day;
-	int Number;
-	int Suma = 0;
-	vector < string > Dias;
-	vector < int > Numero;
+	string Dia14;
+	int Numcito14;
+	int Sum14 = 0;
+	vector < string > Dias14;
+	vector < int > Num14;
 
-	while (Dias.size() < 6)
+	while (Dias14.size() < 6)
 	{
-		cout << "Ingresu un dia de la semana con su respectivo numero" << endl;
-		cin >> Day;
-		cin >> Number;
+		cout << "Ingresa un dia de la semana: " << endl;
+		cin >> Dia14;
+		cout << "Ingresa el numero de ese dia: " << endl;
+		cin >> Numcito14;
 
-		if (Day == "lunes" || Day == "martes" || Day == "miercoles" || Day == "jueves" || Day == "viernes" || Day == "sabado" || Day == "domigo")
+		if (Dia14 == "lunes")
 		{
-			Dias.push_back(Day);
+			Dias14.push_back(Dia14);
+		}
+		else if (Dia14 == "martes")
+		{
+			Dias14.push_back(Dia14);
+		}
+		else if (Dia14 == "miercoles")
+		{
+			Dias14.push_back(Dia14);
+		}
+		else if (Dia14 == "jueves")
+		{
+			Dias14.push_back(Dia14);
+		}
+		else if (Dia14 == "viernes")
+		{
+			Dias14.push_back(Dia14);
+		}
+		else if (Dia14 == "sabado")
+		{
+			Dias14.push_back(Dia14);
+		}
+		else if (Dia14 == "domingo")
+		{
+			Dias14.push_back(Dia14);
 		}
 		else
 		{
 			cout << "Ese dia no existe" << endl;
-			return 1;
 		}
-		if (Number <= 0 || Number > 31)
+
+		if (Numcito14 < 0)
 		{
 			cout << "El numero de dia esta fuera de rango" << endl;
-			return 1;
+		}
+		else if (Numcito14 > 31)
+		{
+			cout << "El numero de dia esta fuera de rango" << endl;
 		}
 		else
 		{
-			Numero.push_back(Number);
+			Num14.push_back(Numcito14);
 		}
 
 	}
 	for (int i = 0; i < 6; i++)
 	{
-		Suma = Suma + Numero[i];
+		Sum14 = Sum14 + Num14[i];
 	}
-	cout << "La suma de todos los dias(numero) es de: " << Suma << endl;
+
+	cout << "La suma de los dias es de: " << Sum14 << endl;
 
 	cout << "-------------------------------\n";
 	cin.ignore();
