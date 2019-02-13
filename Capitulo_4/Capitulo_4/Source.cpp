@@ -513,7 +513,7 @@ void ejercicio()
 	//2
 	cout << "-----------------------------" << endl;
 	
-	vector<double> temps;
+	vector<float> temps;
 	float promTemps = 0;
 
 	cout << "Ingresa | para cerrar el programa: ";
@@ -557,987 +557,55 @@ void ejercicio()
 	cout << "-----------------------------" << endl;
 	//4 
 	cout << "-----------------------------" << endl;
-	vector<int>Nums1;
-	vector<int>Nums2;
-	vector<int>Nums3;
-	vector<int>Nums4;
-	int b = 101;
-	for (int i = 0; i != b;)
-	{
-		Nums1.push_back(i);
-		i++;
-	}
-	cout << "Bienvenido al juego en el que la maquina te adivinara el numero en el que estas pensando del 1 al cien\n";
-	cout << "Tu numero es mayor a 50?:\n";
-	string NumeroDeUsuario0;
-	cin >> NumeroDeUsuario0;
-	if (NumeroDeUsuario0 == "Si" || NumeroDeUsuario0 == "si")
-	{
-		for (int s = 0; s < Nums1.size(); s++)
-		{
-			if (Nums1[s] >= 50)
-			{
-				Nums2.push_back(s);
-			}
-		}
-	}
-	if (NumeroDeUsuario0 == "Si" || NumeroDeUsuario0 == "si")
-	{
-		string Mayor75;
-		cout << "Tu numero es mayor a 75?\n";
-		cin >> Mayor75;
-		if (Mayor75 == "Si" || Mayor75 == "si")
-		{
-			for (int y = 0; y < Nums2.size(); y++)
-			{
-				if (Nums2[y] >= 75)
-				{
-					Nums3.push_back(Nums2[y]);
-				}
-			}
-		}
+	int VoF = 0;
+	vector <int> NumTotal;
 
-		if (Mayor75 == "No" || Mayor75 == "no")
-		{
-			for (int i = 0; i < Nums2.size(); i++)
-			{
-				if (Nums2[i] <= 75)
-				{
-					Nums3.push_back(Nums2[i]);
-				}
-			}
-		}
-
+	for (int i = 1; i <= 100; i++)
+	{
+		NumTotal.push_back(i);
 	}
 
+	cout << "Ingresa 1 para ser verdadero o 2 para ser falso" << endl;
+	cout << "Tu numero es mayor o menor a 50: Verdadero o Falso " << endl;
+	cin >> VoF;
 
-	if (NumeroDeUsuario0 == "No" || NumeroDeUsuario0 == "no")
+	switch (VoF)
 	{
-		for (int s = 0; s < Nums1.size(); s++)
-		{
-			if (Nums1[s] <= 50)
-			{
-				Nums2.push_back(s);
-			}
-		}
+		//en caso de que sea menor de 50
+	case 1:
 
+		VoF = 0;
+		cout << "Tu numero es mayor o menor a 25: Verdadero o Falso " << endl;
+		cin >> VoF;
 
-	}
-	if (NumeroDeUsuario0 == "No" || NumeroDeUsuario0 == "no")
-	{
-		string Mayor25;
-		cout << "Tu numero es mayor a 25?\n";
-		cin >> Mayor25;
-		if (Mayor25 == "Si" || Mayor25 == "si")
+		switch (VoF)
 		{
-			for (int y = 0; y < Nums2.size(); y++)
-			{
-				if (Nums2[y] >= 25)
-				{
-					Nums3.push_back(y);
-				}
-			}
+			//en caso de ser verdadero
+		case 1:
+			VoF = 0;
+			cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
+			cin >> VoF;
+			break;
+			//en caso de ser falso
+		case 2:
+			VoF = 0;
+			cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
+			cin >> VoF;
+			break;
+		default:
+			cout << "Fuera de rango" << endl;
+			break;
 		}
-		else if (Mayor25 == "no" || Mayor25 == "No")
-		{
-			for (int y = 0; y < Nums2.size(); y++)
-			{
-				if (Nums2[y] <= 25)
-				{
-					Nums3.push_back(y);
-				}
-			}
-		}
+		break;
+		//en caso de que sea mayor a 50
+	case 2:
+
+		break;
+	default:
+		cout << "Fuera de rango" << endl;
+		break;
 	}
 
-
-	string Multi;
-	if (Nums3.back() == 25)
-	{
-		cout << "Tu numero es multiplo de 5?\n";
-		cin >> Multi;
-		if (Multi == "Si" || Multi == "si")
-		{
-			cout << "Tu numero es mayor 15?\n";
-			cin >> Multi;
-			if (Multi == "Si" || Multi == "si")
-			{
-				cout << "Tu numero es 20?\n";
-				cin >> Multi;
-				if (Multi == "Si" || Multi == "si")
-				{
-					cout << "Wiiiiiiiii\n";
-				}
-				else
-				{
-					cout << "Tu numero es 25";
-				}
-
-			}
-			else if (Multi == "No" || Multi == "no")
-			{
-				cout << "Tu numero es 15?\n";
-				cin >> Multi;
-				if (Multi == "Si" || Multi == "si")
-				{
-					cout << "Wiiii!!\n";
-				}
-				else if (Multi == "No" || Multi == "no")
-				{
-					cout << "Tu numero es 10?\n";
-					cin >> Multi;
-					if (Multi == "Si" || Multi == "si")
-					{
-						cout << "Wiiiiiiiii\n";
-					}
-					else
-					{
-						cout << "Tu numero es 5";
-					}
-				}
-			}
-		}
-		else if (Multi == "No" || Multi == "no")
-		{
-			cout << "Tu numero esta entre el 1 y el 13\n";
-			cin >> Multi;
-			if (Multi == "No" || Multi == "no")
-			{
-				cout << "Tu numero esta entre 14 y 24\n";
-				cout << "Tu numero es multiplo de 3?\n";
-				cin >> Multi;
-				if (Multi == "Si" || Multi == "si")
-				{
-					cout << "Tu numero es 18?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Yay\n";
-					}
-					else if ((Multi == "no" || Multi == "No"))
-					{
-						cout << "Tu numero es 24?\n";
-						cin >> Multi;
-						if (Multi == "no" || Multi == "No")
-						{
-							cout << "Yay\n";
-						}
-						else if (Multi == "Si" || Multi == "si")
-						{
-							cout << "Tu numero es 21\n";
-						}
-					}
-				}
-
-				else if (Multi == "No" || Multi == "no")
-				{
-					cout << "Tu numero esta entre el 14 y 24\n";
-					cout << "Tu numero es mayor a 17?\n";
-					cin >> Multi;
-					if (Multi == "Si" || Multi == "si")
-					{
-						cout << "Tu numero es 19?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "no" || Multi == "No")
-						{
-							cout << "Tu numero es 23?\n";
-							cin >> Multi;
-							if (Multi == "no" || Multi == "No")
-							{
-								cout << "Tu numero es 24";
-							}
-							else if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-
-						}
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 17?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay\n";
-						}
-						else if (Multi == "no" || Multi == "No")
-						{
-							cout << "Tu numero es 16?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "no" || Multi == "No")
-							{
-								cout << "Tu numero es 14\n";
-							}
-						}
-					}
-				}
-			}
-			if (Multi == "Si" || Multi == "si")
-			{
-				cout << "Tu numero es multiplo de 3?\n";
-				cin >> Multi;
-				if (Multi == "no" || Multi == "No")
-				{
-					cout << "Tu numero es mayor a 4?\n";
-					cin >> Multi;
-					if (Multi == "Si" || Multi == "si")
-					{
-						cout << "Tu numero es 7?\n";
-						cin >> Multi;
-						if (Multi == "Si" || Multi == "si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "no" || Multi == "No")
-						{
-							cout << "Tu numero es 11?\n";
-							cin >> Multi;
-							if (Multi == "Si" || Multi == "si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "no" || Multi == "No")
-							{
-								cout << "Tu numero es 13";
-							}
-
-						}
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 4?\n";
-						cin >> Multi;
-						if (Multi == "Si" || Multi == "si")
-						{
-							cout << "Yay\n";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 2?\n";
-							cin >> Multi;
-							if (Multi == "Si" || Multi == "si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "no" || Multi == "No")
-							{
-								cout << "Tu numero es 1";
-							}
-						}
-					}
-				}
-				else if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Tu numero es mayor a 9?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 12\n";
-
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						if (Multi == "no" || Multi == "No")
-						{
-							cout << "Tu numero es 9?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "no" || Multi == "No")
-							{
-								cout << "Tu numero es 6?";
-								cin >> Multi;
-								if (Multi == "si" || Multi == "Si")
-								{
-
-									cout << "Yay";
-								}
-								else if (Multi == "no" || Multi == "No")
-								{
-									cout << "Tu numero es 3";
-								}
-							}
-						}
-					}
-
-
-				}
-
-			}
-
-		}
-	}
-	else if (Nums3.back() == 50)
-	{
-		cout << "Tu numero es multiplo de 5?\n";
-		cin >> Multi;
-		if (Multi == "si" || Multi == "Si")
-		{
-			cout << "Tu numero es mayor a 40?\n";
-			cin >> Multi;
-			if (Multi == "si" || Multi == "Si")
-			{
-				cout << "Tu numero es 45?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Yay\n";
-				}
-				else if (Multi == "no" || Multi == "No")
-				{
-					cout << "Tu numero es 50\n";
-				}
-			}
-			else if (Multi == "no" || Multi == "No")
-			{
-				cout << "Tu numero es 40?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Yay";
-				}
-				else if (Multi == "no" || Multi == "No")
-				{
-					cout << "Tu numero es 35?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Yay\n";
-
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 30";
-					}
-				}
-
-			}
-		}
-		else if (Multi == "no" || Multi == "No")
-		{
-			cout << "Tu numero esta entre el 26 y 37?\n";
-			cin >> Multi;
-			if (Multi == "si" || Multi == "Si")
-			{
-				cout << "Tu numero es mayor a 29?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Tu numero es un multiplo de 3?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 36\n";
-					}
-					else if (Multi == "No" || Multi == "no")
-					{
-						cout << "Tu numero es 32?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 34?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 37";
-							}
-						}
-					}
-
-				}
-				else if (Multi == "no" || Multi == "No")//esto es por si el numero es menor a 29
-				{
-					cout << "Tu numero es multiplo de 3?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 21?";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 18";
-						}
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 29?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 28?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 26";
-							}
-						}
-					}
-				}
-			}
-			else if (Multi == "no" || Multi == "No")//Acuerdate que este else if es para el 38 hasta 49
-			{
-				cout << "Tu numero es multiplo de 3?";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Tu numero es mayor a 45?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 48";
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 42?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 39";
-						}
-					}
-				}
-				else if (Multi == "No" || Multi == "no")//Por si no es multiplo de 3
-				{
-					cout << "Tu numero es mayor a 44?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 46?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 47?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 49";
-							}
-						}
-
-					}
-					else if (Multi == "no" || Multi == "No")//Menor a 44
-					{
-						cout << "Tu numero es 44?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 43?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 41?\n";
-								cin >> Multi;
-								if (Multi == "si" || Multi == "Si")
-								{
-									cout << "Yay\n";
-								}
-								else if (Multi == "No" || Multi == "no")
-								{
-									cout << "Tu numero es 38";
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	else if (Nums3.back() == 75)
-	{
-		cout << "Tu numero es multiplo de 5?\n";//Multiplos de 5
-		cin >> Multi;
-		if (Multi == "si" || Multi == "Si")
-		{
-			cout << "Tu numero es mayor a 65?\n";
-			cin >> Multi;
-			if (Multi == "si" || Multi == "Si")
-			{
-				cout << "Tu numero es 70?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Yay\n";
-				}
-				else if (Multi == "no" || Multi == "No")
-				{
-					cout << "Tu numero es 75\n";
-				}
-			}
-			else if (Multi == "no" || Multi == "No")
-			{
-				cout << "Tu numero es 40?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Yay";
-				}
-				else if (Multi == "no" || Multi == "No")
-				{
-					cout << "Tu numero es 60?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Yay\n";
-
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 55";
-					}
-				}
-
-			}
-		}
-		else if (Multi == "no" || Multi == "No")//52 62
-		{
-			cout << "Tu numero esta entre el 52 y 62?\n";
-			cin >> Multi;
-			if (Multi == "si" || Multi == "Si")
-			{
-				cout << "Tu numero es multiplo de 3?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Tu numero es 51?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Yay";
-					}
-					else if (Multi == "No" || Multi == "no")
-					{
-						cout << "Tu numero es 54?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 51";
-						}
-					}
-
-				}
-				else if (Multi == "no" || Multi == "No")//Por si no es multiplo de 3 pero su esta ewntre e; 52 y 62
-				{
-					cout << "Tu numero es mayor a 58?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 59?";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 61?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 62";
-							}
-						}
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 58?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 56?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 53?\n";
-								cin >> Multi;
-								if (Multi == "si" || Multi == "Si")
-								{
-									cout << "Yay";
-								}
-								else if (Multi == "No" || Multi == "no")
-								{
-									cout << "Tu numero es 52";
-								}
-							}
-						}
-					}
-				}
-			}
-			else if (Multi == "no" || Multi == "No")//Acuerdate que este else if es para el 64 hasta 74 
-			{
-				cout << "Tu numero es multiplo de 3?";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Tu numero es mayor a 69?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 72";
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 69?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 66?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 63";
-							}
-						}
-					}
-				}
-				else if (Multi == "No" || Multi == "no")//Por si no es multiplo de 3
-				{
-					cout << "Tu numero es mayor a 68?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 71?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 73?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 74";
-							}
-						}
-
-					}
-					else if (Multi == "no" || Multi == "No")//Menor a 44
-					{
-						cout << "Tu numero es 68?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 64";
-						}
-					}
-				}
-			}
-		}
-	}
-	else if (Nums3.back() == 100)
-	{
-		cout << "Tu numero es multiplo de 5?\n";//Multiplos de 5
-		cin >> Multi;
-		if (Multi == "si" || Multi == "Si")
-		{
-			cout << "Tu numero es mayor a 90?\n";
-			cin >> Multi;
-			if (Multi == "si" || Multi == "Si")
-			{
-				cout << "Tu numero es 95?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Yay\n";
-				}
-				else if (Multi == "no" || Multi == "No")
-				{
-					cout << "Tu numero es 100\n";
-				}
-			}
-			else if (Multi == "no" || Multi == "No")
-			{
-				cout << "Tu numero es 90?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Yay";
-				}
-				else if (Multi == "no" || Multi == "No")
-				{
-					cout << "Tu numero es 85?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Yay\n";
-
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 80";
-					}
-				}
-
-			}
-		}
-		else if (Multi == "no" || Multi == "No")//76 86 
-		{
-			cout << "Tu numero esta entre el 76 y 86?\n";
-			cin >> Multi;
-			if (Multi == "si" || Multi == "Si")
-			{
-				cout << "Tu numero es multiplo de 3?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Tu numero es mayor a 84?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 87";
-					}
-					else if (Multi == "No" || Multi == "no")
-					{
-						cout << "Tu numero es 84?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 81?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "no" || Multi == "No")
-							{
-								cout << "Tu numero es 78";
-							}
-						}
-					}
-
-				}
-				else if (Multi == "no" || Multi == "No")//Por si no es multiplo de 3 pero su esta ewntre e; 76 y 86
-				{
-					cout << "Tu numero es mayor a 79?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						{
-							cout << "Tu numero es 82?";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 83?\n";
-								cin >> Multi;
-								if (Multi == "si" || Multi == "Si")
-								{
-									cout << "Yay";
-								}
-								else if (Multi == "No" || Multi == "no")
-								{
-									cout << "Tu numero es 86";
-								}
-							}
-						}
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 79?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 77?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 76\n";
-							}
-						}
-					}
-
-				}
-			}
-			else if (Multi == "no" || Multi == "No")//Acuerdate que este else if es para el 88 hasta 98
-			{
-				cout << "Tu numero es multiplo de 3?\n";
-				cin >> Multi;
-				if (Multi == "si" || Multi == "Si")
-				{
-					cout << "Tu numero es 93?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Yay";
-					}
-					else if (Multi == "no" || Multi == "No")
-					{
-						cout << "Tu numero es 96?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 99";
-						}
-					}
-				}
-				else if (Multi == "No" || Multi == "no")//Por si no es multiplo de 3
-				{
-					cout << "Tu numero es mayor a 92?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Tu numero es 94?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "No" || Multi == "no")
-						{
-							cout << "Tu numero es 97?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es 98";
-							}
-						}
-
-					}
-
-
-
-				}
-				else if (Multi == "no" || Multi == "No")//Menor a 44
-				{
-					cout << "Tu numero es 92?\n";
-					cin >> Multi;
-					if (Multi == "si" || Multi == "Si")
-					{
-						cout << "Yay";
-					}
-					else if (Multi == "No" || Multi == "no")
-					{
-						cout << "Tu numero es 91?\n";
-						cin >> Multi;
-						if (Multi == "si" || Multi == "Si")
-						{
-							cout << "Yay";
-						}
-						else if (Multi == "no" || Multi == "No")
-						{
-							cout << "Tu numero es el 89?\n";
-							cin >> Multi;
-							if (Multi == "si" || Multi == "Si")
-							{
-								cout << "Yay\n";
-							}
-							else if (Multi == "No" || Multi == "no")
-							{
-								cout << "Tu numero es el 88";
-							}
-						}
-					}
-				}
-			}
-		}
-	}
 	cout << "-----------------------------" << endl;
 	//5
 	cout << "-----------------------------" << endl;
@@ -2315,6 +1383,59 @@ void ejercicio()
 	cin.get();
 }
 
+void error()
+{
+	int VoF = 0;
+	vector <int> NumTotal;
+
+	for (int i = 1; i <= 100; i++)
+	{
+		NumTotal.push_back(i);
+	}
+
+	cout << "Ingresa 1 para ser verdadero o 2 para ser falso" << endl;
+	cout << "Tu numero es mayor o menor a 50: Verdadero o Falso " << endl;
+	cin >> VoF;
+
+	switch (VoF)
+	{
+		//en caso de que sea menor de 50
+		case 1:
+
+			VoF = 0;
+			cout << "Tu numero es mayor o menor a 25: Verdadero o Falso " << endl;
+			cin >> VoF;
+
+			switch (VoF)
+			{
+				//en caso de ser verdadero
+				case 1:
+					VoF = 0;
+					cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
+					cin >> VoF;
+					break;
+				//en caso de ser falso
+				case 2:
+					VoF = 0;
+					cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
+					cin >> VoF;
+					break;
+			default:
+				cout << "Fuera de rango" << endl;
+				break;
+			}
+			break;
+		//en caso de que sea mayor a 50
+		case 2:
+
+			break;
+	default:
+		cout << "Fuera de rango" << endl;
+		break;
+	}
+	cin.ignore();
+	cin.get();
+}
 
 int main()
 {
@@ -2323,6 +1444,8 @@ int main()
 	cin >> valor;
 	switch (valor)
 	{
+		case 0:
+			error();
 		case 1:
 			try1();
 			break;
