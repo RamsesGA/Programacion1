@@ -560,47 +560,230 @@ void ejercicio()
 	int VoF = 0;
 	vector <int> NumTotal;
 
-	for (int i = 1; i <= 100; i++)
-	{
-		NumTotal.push_back(i);
-	}
-
 	cout << "Ingresa 1 para ser verdadero o 2 para ser falso" << endl;
-	cout << "Tu numero es mayor o menor a 50: Verdadero o Falso " << endl;
+	cout << "Tu numero es menor o mayor a 50: Verdadero o Falso " << endl;
 	cin >> VoF;
 
 	switch (VoF)
 	{
-		//en caso de que sea menor de 50
+		//en caso de que sea menor de 50. Del 50 al 1
 	case 1:
-
 		VoF = 0;
-		cout << "Tu numero es mayor o menor a 25: Verdadero o Falso " << endl;
+		cout << "Tu numero es menor o mayor a 25: Verdadero o Falso " << endl;
 		cin >> VoF;
 
 		switch (VoF)
 		{
-			//en caso de ser verdadero
+			//en caso de menor a 25. Del 25 al 1
 		case 1:
 			VoF = 0;
 			cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
 			cin >> VoF;
-			break;
-			//en caso de ser falso
+
+			switch (VoF)
+			{
+				//en caso de ser par. Del 24 al 2
+			case 1:
+				VoF = 0;
+				cout << "Tu numero es menor o mayor a 12: Verdadero o Falso " << endl;
+				cin >> VoF;
+
+				switch (VoF)
+				{
+					//en caso de ser menor. Del 12 al 2
+				case 1:
+					VoF = 0;
+					cout << "Tu numero es menor o mayor a 8: Verdadero o Falso " << endl;
+					cin >> VoF;
+
+					switch (VoF)
+					{
+						//en caso de ser menor. Del 8 al 2
+					case 1:
+						VoF = 0;
+						cout << "Tu numero es menor o mayor a 4: Verdadero o Falso " << endl;
+						cin >> VoF;
+
+						switch (VoF)
+						{
+							//en caso de ser menor.
+						case 1:
+							VoF = 0;
+							cout << "Tu numero es menor o mayor a 4: Verdadero o Falso " << endl;
+							cin >> VoF;
+
+							switch (VoF)
+							{
+								//en caso de ser menor.
+							case 1:
+								VoF = 0;
+								cout << "Tu numero es menor o mayor a 4: Verdadero o Falso " << endl;
+								cin >> VoF;
+
+								switch (VoF)
+								{
+									//en caso de ser menor.
+								case 1:
+									VoF = 0;
+									cout << "Tu numero es menor o mayor a 2: Verdadero o Falso " << endl;
+									cin >> VoF;
+
+									switch (VoF)
+									{
+										//resutlado
+									case 1:
+										cout << "Tu numero es 4" << endl;
+										break;
+										//resutlado
+									case 2:
+										cout << "Tu numero es 2" << endl;
+										break;
+									default:
+										cout << "Fuera de rango" << endl;
+										break;
+									}
+									//en caso de ser mayor. el resultado
+								case 2:
+									cout << "Tu numero es 6" << endl;
+									break;
+
+								default:
+									cout << "Fuera de rango" << endl;
+									break;
+								}
+								//en caso de ser mayor
+							case 2:
+								VoF = 0;
+								cout << "Tu numero es menor o mayor a 6 " << endl;
+								cin >> VoF;
+
+								switch (VoF)
+								{
+									//en caso de ser menor. el resultado
+								case 1:
+									cout << "Tu numero es 8" << endl;
+									break;
+									//en caso de ser mayor. 
+								case 2:
+									VoF = 0;
+									cout << "Tu numero es menor o mayor a 6 " << endl;
+									cin >> VoF;
+								default:
+									break;
+								}
+
+							default:
+								cout << "Fuera de rango" << endl;
+								break;
+							}
+
+						case 2:
+						default:
+							cout << "Fuera de rango" << endl;
+							break;
+						}
+						//en caso de ser mayor. 10 y 12
+					case 2:
+						VoF = 0;
+						cout << "Tu numero es menor o mayor a 4: Verdadero o Falso " << endl;
+						cin >> VoF;
+
+					default:
+						cout << "Fuera de rango" << endl;
+						break;
+					}
+					//en caso de ser mayor. Del 14 al 24
+				case 2:
+					VoF = 0;
+					cout << "Tu numero es : Verdadero o Falso " << endl;
+					cin >> VoF;
+				default:
+					cout << "Fuera de rango" << endl;
+					break;
+				}
+
+				//en caso de ser impar. Del 25 al 3
+			case 2:
+				VoF = 0;
+				cout << "Tu numero es mayor o menor a 13: Verdadero o Falso " << endl;
+				cin >> VoF;
+			default:
+				cout << "Fuera de rango" << endl;
+				break;
+			}
+			//en caso de ser mayor a 25. Del 25 al 50
 		case 2:
 			VoF = 0;
 			cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
 			cin >> VoF;
-			break;
 		default:
 			cout << "Fuera de rango" << endl;
 			break;
 		}
-		break;
-		//en caso de que sea mayor a 50
-	case 2:
 
-		break;
+
+
+
+
+		//en caso de que sea mayor a 50 PENDIENTE----------------------
+	case 2:
+		VoF = 0;
+		cout << "Tu numero es menor o mayor a 75: Verdadero o Falso " << endl;
+		cin >> VoF;
+
+		switch (VoF)
+		{
+			//en caso de menor a 75
+		case 1:
+			VoF = 0;
+			cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
+			cin >> VoF;
+
+			switch (VoF)
+			{
+				//en caso de ser par
+			case 1:
+				VoF = 0;
+				cout << "Tu numero es menor o mayor a 60: Verdadero o Falso " << endl;
+				cin >> VoF;
+
+				switch (VoF)
+				{
+					//en caso de ser menor
+				case 1:
+					VoF = 0;
+					cout << "Tu numero es : Verdadero o Falso " << endl;
+					cin >> VoF;
+
+					//en caso de ser mayor
+				case 2:
+					VoF = 0;
+					cout << "Tu numero es : Verdadero o Falso " << endl;
+					cin >> VoF;
+				default:
+					cout << "Fuera de rango" << endl;
+					break;
+				}
+
+				//en caso de ser impar PENDIENTE-----------------------------------------
+			case 2:
+				VoF = 0;
+				cout << "Tu numero es mayor o menor a 13: Verdadero o Falso " << endl;
+				cin >> VoF;
+			default:
+				cout << "Fuera de rango" << endl;
+				break;
+			}
+			//en caso de ser mayor a 75 PENDIENTE --------------------------------------
+		case 2:
+			VoF = 0;
+			cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
+			cin >> VoF;
+
+		default:
+			cout << "Fuera de rango" << endl;
+			break;
+		}
 	default:
 		cout << "Fuera de rango" << endl;
 		break;
@@ -1388,47 +1571,230 @@ void error()
 	int VoF = 0;
 	vector <int> NumTotal;
 
-	for (int i = 1; i <= 100; i++)
-	{
-		NumTotal.push_back(i);
-	}
-
 	cout << "Ingresa 1 para ser verdadero o 2 para ser falso" << endl;
-	cout << "Tu numero es mayor o menor a 50: Verdadero o Falso " << endl;
+	cout << "Tu numero es menor o mayor a 50: Verdadero o Falso " << endl;
 	cin >> VoF;
 
 	switch (VoF)
 	{
-		//en caso de que sea menor de 50
+		//en caso de que sea menor de 50. Del 50 al 1
 		case 1:
-
 			VoF = 0;
-			cout << "Tu numero es mayor o menor a 25: Verdadero o Falso " << endl;
+			cout << "Tu numero es menor o mayor a 25: Verdadero o Falso " << endl;
 			cin >> VoF;
 
 			switch (VoF)
 			{
-				//en caso de ser verdadero
+				//en caso de menor a 25. Del 25 al 1
 				case 1:
 					VoF = 0;
 					cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
 					cin >> VoF;
-					break;
-				//en caso de ser falso
+					
+					switch (VoF)
+					{
+						//en caso de ser par. Del 24 al 2
+						case 1:
+							VoF = 0;
+							cout << "Tu numero es menor o mayor a 12: Verdadero o Falso " << endl;
+							cin >> VoF;
+
+							switch (VoF)
+							{
+								//en caso de ser menor. Del 12 al 2
+								case 1:
+									VoF = 0;
+									cout << "Tu numero es menor o mayor a 8: Verdadero o Falso " << endl;
+									cin >> VoF;
+
+									switch (VoF)
+									{
+										//en caso de ser menor. Del 8 al 2
+										case 1:
+											VoF = 0;
+											cout << "Tu numero es menor o mayor a 4: Verdadero o Falso " << endl;
+											cin >> VoF;
+
+											switch (VoF)
+											{
+												//en caso de ser menor.
+												case 1:
+													VoF = 0;
+													cout << "Tu numero es menor o mayor a 4: Verdadero o Falso " << endl;
+													cin >> VoF;
+
+													switch (VoF)
+													{
+														//en caso de ser menor.
+														case 1:
+															VoF = 0;
+															cout << "Tu numero es menor o mayor a 4: Verdadero o Falso " << endl;
+															cin >> VoF;
+
+															switch (VoF)
+															{
+																//en caso de ser menor.
+																case 1:
+																	VoF = 0;
+																	cout << "Tu numero es menor o mayor a 2: Verdadero o Falso " << endl;
+																	cin >> VoF;
+
+																	switch (VoF)
+																	{
+																		//resutlado
+																		case 1:
+																			cout << "Tu numero es 4" << endl;
+																			break;
+																		//resutlado
+																		case 2:
+																			cout << "Tu numero es 2" << endl;
+																			break;
+																	default:
+																		cout << "Fuera de rango" << endl;
+																		break;
+																	}
+																//en caso de ser mayor. el resultado
+																case 2:
+																	cout << "Tu numero es 6" << endl;
+																	break;
+
+															default:
+																cout << "Fuera de rango" << endl;
+																break;
+															}
+														//en caso de ser mayor
+														case 2:
+															VoF = 0;
+															cout << "Tu numero es menor o mayor a 6 " << endl;
+															cin >> VoF;
+
+															switch (VoF)
+															{
+																//en caso de ser menor. el resultado
+																case 1:
+																	cout << "Tu numero es 8" << endl;
+																	break;
+																//en caso de ser mayor. 
+																case 2:
+																	VoF = 0;
+																	cout << "Tu numero es menor o mayor a 6 " << endl;
+																	cin >> VoF;
+															default:
+																break;
+															}
+
+													default:
+														cout << "Fuera de rango" << endl;
+														break;
+													}
+
+												case 2:
+											default:
+												cout << "Fuera de rango" << endl;
+												break;
+											}
+										//en caso de ser mayor. 10 y 12
+										case 2:
+											VoF = 0;
+											cout << "Tu numero es menor o mayor a 4: Verdadero o Falso " << endl;
+											cin >> VoF;
+
+									default:
+										cout << "Fuera de rango" << endl;
+										break;
+									}
+								//en caso de ser mayor. Del 14 al 24
+								case 2:
+									VoF = 0;
+									cout << "Tu numero es : Verdadero o Falso " << endl;
+									cin >> VoF;
+							default:
+								cout << "Fuera de rango" << endl;
+								break;
+							}
+
+						//en caso de ser impar. Del 25 al 3
+						case 2:
+							VoF = 0;
+							cout << "Tu numero es mayor o menor a 13: Verdadero o Falso " << endl;
+							cin >> VoF;
+					default:
+						cout << "Fuera de rango" << endl;
+						break;
+					}
+				//en caso de ser mayor a 25. Del 25 al 50
 				case 2:
 					VoF = 0;
 					cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
 					cin >> VoF;
-					break;
 			default:
 				cout << "Fuera de rango" << endl;
 				break;
 			}
-			break;
-		//en caso de que sea mayor a 50
-		case 2:
 
-			break;
+
+
+
+
+		//en caso de que sea mayor a 50 PENDIENTE----------------------
+		case 2:
+			VoF = 0;
+			cout << "Tu numero es menor o mayor a 75: Verdadero o Falso " << endl;
+			cin >> VoF;
+
+			switch (VoF)
+			{
+				//en caso de menor a 75
+				case 1:
+					VoF = 0;
+					cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
+					cin >> VoF;
+
+					switch (VoF)
+					{
+						//en caso de ser par
+						case 1:
+							VoF = 0;
+							cout << "Tu numero es menor o mayor a 60: Verdadero o Falso " << endl;
+							cin >> VoF;
+
+							switch (VoF)
+							{
+								//en caso de ser menor
+								case 1:
+									VoF = 0;
+									cout << "Tu numero es : Verdadero o Falso " << endl;
+									cin >> VoF;
+
+								//en caso de ser mayor
+								case 2:
+									VoF = 0;
+									cout << "Tu numero es : Verdadero o Falso " << endl;
+									cin >> VoF;
+							default:
+								cout << "Fuera de rango" << endl;
+								break;
+							}
+
+						//en caso de ser impar PENDIENTE-----------------------------------------
+						case 2:
+							VoF = 0;
+							cout << "Tu numero es mayor o menor a 13: Verdadero o Falso " << endl;
+							cin >> VoF;
+						default:
+							cout << "Fuera de rango" << endl;
+							break;
+						}
+				//en caso de ser mayor a 75 PENDIENTE --------------------------------------
+				case 2:
+					VoF = 0;
+					cout << "Tu numero es par o impar: Verdadero o Falso " << endl;
+					cin >> VoF;
+
+				default:
+					cout << "Fuera de rango" << endl;
+					break;
+				}
 	default:
 		cout << "Fuera de rango" << endl;
 		break;
