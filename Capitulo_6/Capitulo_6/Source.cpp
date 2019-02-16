@@ -288,6 +288,8 @@ void bulls()
 	cin.get();
 }
 
+//------------------------------------------------------------------------------
+
 void detector()
 {
 	string numeros;
@@ -346,6 +348,82 @@ void detector()
 	cin.get();
 }
 
+//------------------------------------------------------------------------------
+
+void permCombi()
+{
+	int num = 0;
+	int numA = 0;
+	int numB = 0;
+	int numC = 0;
+	int final = 0;
+	float num2 = 0;
+	int decision = 0;
+	int cont = 1;
+
+	cout << "Ingresa un numero total" << endl;
+	cin >> num;
+	cout << "Ingresa un numero de combinaciones o permutaciones" << endl;
+	cin >> numA;
+	cout << "Ingresa 1 para que tu numero se resuelva por combinacion y 2 para permutacion: " << endl;
+	cin >> decision;
+	num2 = num;
+	switch (decision)
+	{
+		case 1:
+			cout << "Combinaciones" << endl;
+			for (int i = 1; i < num; i++)
+			{
+				num2 = num2 * (num - cont);
+				cont++;
+			}
+			cont = 1;
+			numB = num - numA;
+			numC = numA;
+			for (int j = 1; j < numA; j++)
+			{
+				numB = numB * (numA - cont);
+				cont++;
+			}
+			cont = 1;
+			for (int k = 1; k < numA; k++)
+			{
+				numC = numC * (numA - cont);
+				cont++;
+			}
+
+			final = num2 / (numC * numB);
+			cout << "Combinaciones posibles = " << final << endl;
+			break;
+		case 2:
+			cout << "Permutaciones" << endl;
+			//para sacar n!
+			for (int i = 1; i < num; i++)
+			{
+				num2 = num2 * (num - cont);
+				cont++;
+			}
+			cont = 1;
+			numB = num - numA;
+			num = numB;
+			for (int j = 1; j < num; j++)
+			{
+				numB = numB * (num - cont);
+				cont++;
+			}
+			cont = 1;
+			final = num2 / numB;
+			cout << "Permutaciones posibles = " << final << endl;
+			break;
+	default:
+		cout << "Valor no aceptado" << endl;
+		break;
+	}
+
+}
+
+//------------------------------------------------------------------------------
+
 int main()
 {
 	cout << "Bienvenido a nuestra calculadora simple. Por favor ingrese expresiones usando números de punto flotante." << endl;
@@ -355,6 +433,7 @@ int main()
 	cout << "Ingresa 1 para abrir el programa de gramatica de ingles" << endl;
 	cout << "Ingresa 2 para abrir el juego de los toros y vacas" << endl;
 	cout << "Ingresa 3 para abrir el detector de numeros" << endl;
+	cout << "Ingresa 4 para abrir la calculadora de permutaciones o combinaciones" << endl;
 
 	try
 	{
@@ -375,6 +454,10 @@ int main()
 			if (val2 == 3)
 			{
 				detector();
+			}
+			if (val2 == 4)
+			{
+				permCombi();
 			}
 			if (val2 == 19)
 			{
