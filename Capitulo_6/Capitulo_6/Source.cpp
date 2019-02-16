@@ -236,17 +236,125 @@ string ejercicio()
 	cout << "Nombre: " << Nombres[Ubicacion] << " y la edad es de " << Edad[Ubicacion] << endl;
 
 	NombreEdad.push_back(Name_value(Nombres[Ubicacion], Edad[Ubicacion]));
+	return 0;
 }
 
 
 //------------------------------------------------------------------------------
+
+void gramatica()
+{
+	string gramatica;
+
+	cout << "Ingresa una frase en ingles para checar la gramaatica: " << endl;
+	cin >> gramatica;
+
+
+}
+
+//------------------------------------------------------------------------------
+
+void bulls()
+{
+	vector <string> NumeroR{ "ABCD","EFGH", "IJKL", "MNOP" };
+	vector <string> NumeroRandom(1);
+	string Usuario;
+	int NumAdi = 0;
+
+	cout << "Juego de la vaca y el toro" << endl;
+
+	cout << "Ingresa una numero del 0 al 3: " << endl;
+	cin >> NumAdi;
+
+	NumeroRandom[0] = NumeroR[NumAdi];
+
+	for (int i = 0; i < NumeroRandom.size(); i++)
+	{
+		cout << "Ingresa una letra del AAAA al ZZZZ, las posibilidades son graciosas: " << endl;
+		cin >> Usuario;
+
+		if (Usuario == NumeroRandom[i])
+		{
+			cout << "Ganaste" << endl;
+		}
+		else
+		{
+			cout << "Perdiste" << endl;
+		}
+
+	}
+
+	cin.ignore();
+	cin.get();
+}
+
+void detector()
+{
+	string numeros;
+
+	cout << "Detector de numeros: " << endl;
+	cout << "Ingresa 4 digitos: " << endl;
+	cin >> numeros;
+
+	if (numeros.size() >= 4)
+	{
+		//MILLARES
+		if (numeros[0] > '1' || numeros[0] == '0')
+		{
+			cout << numeros[0] << " Millares" << endl;
+		}
+		if (numeros[0] == '1')
+		{
+			cout << numeros[0] << " Millar" << endl;
+		}
+		//CENTENAS
+		if (numeros[1] > '1' || numeros[1] == '0')
+		{
+			cout << numeros[1] << " Centenas" << endl;
+		}
+		if (numeros[1] == '1')
+		{
+			cout << numeros[1] << " Centena" << endl;
+		}
+		//DECENAS
+		if (numeros[2] > '1' || numeros[1] == '0')
+		{
+			cout << numeros[2] << " Decenas" << endl;
+		}
+		if (numeros[2] == '1')
+		{
+			cout << numeros[2] << " Decena" << endl;
+		}
+		//UNIDADES
+		if (numeros[3] > '1' || numeros[1] == '0')
+		{
+			cout << numeros[3] << " Unidades" << endl;
+		}
+		if (numeros[3] == '1')
+		{
+			cout << numeros[3] << " Unidad" << endl;
+		}
+	}
+	else
+	{
+		cout << "Fuera de rango" << endl;
+	}
+
+	cout << "Ingresa cualquier cosa para salir..." << endl;
+
+	cin.ignore();
+	cin.get();
+}
 
 int main()
 {
 	cout << "Bienvenido a nuestra calculadora simple. Por favor ingrese expresiones usando números de punto flotante." << endl;
 	cout << "Puedes usar, +, -, *, /" << endl;
 	cout << "Para mostrar un resultado pon los numeros, la expresion logica y un =" << endl;
-	cout << "Ingresa 19 para abrir el ejercicio externo: " << endl;
+	cout << "Ingresa 19 para abrir el ejercicio externo" << endl;
+	cout << "Ingresa 1 para abrir el programa de gramatica de ingles" << endl;
+	cout << "Ingresa 2 para abrir el juego de los toros y vacas" << endl;
+	cout << "Ingresa 3 para abrir el detector de numeros" << endl;
 
 	try
 	{
@@ -256,6 +364,18 @@ int main()
 		while (cin) 
 		{
 			cin >> val2;
+			if (val2 == 1)
+			{
+				gramatica();
+			}
+			if (val2 == 2)
+			{
+				bulls();
+			}
+			if (val2 == 3)
+			{
+				detector();
+			}
 			if (val2 == 19)
 			{
 				ejercicio();
