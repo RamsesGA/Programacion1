@@ -424,6 +424,78 @@ void permCombi()
 
 //------------------------------------------------------------------------------
 
+void expresiones()
+{
+	string jerar;
+
+	cout << "Bienvenido a las expresiones logicas" << endl;
+
+	cout << "La jerarquia de las expresiones logicas es de esta manera: " << endl;
+
+	cout << "! (no), & (y), ^ (exclusivo o), ~ (complemento), | (o) " << endl;
+
+	cout << "Escribe un ejemplo de como harias un grupo de jerarquia" << endl;
+	cin >> jerar;
+
+	cin.ignore();
+	cin.get();
+}
+
+//------------------------------------------------------------------------------
+void tester()
+{
+	char tist[99];
+	string test;
+	cout << "Testeador de frases" << endl;
+
+	cout << "Ingresa una frase y al final termina con un espacio y ." << endl;
+	cin >> tist;
+
+	gets_s(tist);
+	test = tist;
+
+	if (test.back() == '.')
+	{
+		test.pop_back();
+		if (test[-2] == ' ')
+		{
+			cout << " Bien " << endl;
+		}
+		else
+		{
+			cout << " Incorrecto " << endl;
+		}
+	}
+	else
+	{
+		cout << " Incorrecto " << endl;
+	}
+	cin.ignore();
+	cin.get();
+}
+//------------------------------------------------------------------------------
+
+void grama()
+{
+	//Sentence:
+	//Noun Verb 
+	//Sentence Conjunction Sentence 
+	//Conjunction :
+	//"and"
+	//"or"
+	//"but"
+	//"the"
+	//Noun :
+	//"birds"
+	//"fish"
+	//"C++"
+	//Verb :
+	//"rules"
+	//"fly"
+	//"swim"
+}
+//------------------------------------------------------------------------------
+
 int main()
 {
 	cout << "Bienvenido a nuestra calculadora simple. Por favor ingrese expresiones usando números de punto flotante." << endl;
@@ -431,10 +503,18 @@ int main()
 	cout << "Para mostrar un resultado pon los numeros, la expresion logica y un =" << endl;
 	cout << "Ingresa 19 para abrir el ejercicio externo" << endl;
 	cout << "Ingresa 1 para abrir el programa de gramatica de ingles" << endl;
+	//8
 	cout << "Ingresa 2 para abrir el juego de los toros y vacas" << endl;
+	//9
 	cout << "Ingresa 3 para abrir el detector de numeros" << endl;
+	//10
 	cout << "Ingresa 4 para abrir la calculadora de permutaciones o combinaciones" << endl;
-
+	//7
+	cout << "Ingresa 5 expresiones logicas a nivel gramatica" << endl;
+	//6
+	cout << "Ingresa 6 para abrir el testeador de frases" << endl;
+	//5
+	cout << "Ingresa 7 para abrir la gramatica" << endl;
 	try
 	{
 		double val = 0;
@@ -458,6 +538,18 @@ int main()
 			if (val2 == 4)
 			{
 				permCombi();
+			}
+			if (val2 == 5)
+			{
+				expresiones();
+			}
+			if (val2 == 6)
+			{
+				tester();
+			}
+			if (val2 == 7)
+			{
+				grama();
 			}
 			if (val2 == 19)
 			{
