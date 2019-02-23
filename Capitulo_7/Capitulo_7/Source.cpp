@@ -3,11 +3,11 @@
 
 struct Token { //la función struct ya viene por default la creación de variables públicas
 	char kind;		//Tipo de token
-	double value;		//Tipo de valor
+	int value;		//Tipo de valor
 	string name;
 	Token(char ch)  // Constructor donde solo recibe ch un valor
 		:kind(ch), value(0) { }
-	Token(char ch, double val) //Constructor donde ch y val reciben un valor
+	Token(char ch, int val) //Constructor donde ch y val reciben un valor
 		:kind(ch), value(val) { }
 	Token(char ch, string nombre)
 		:kind(ch), name(nombre){ }
@@ -25,11 +25,12 @@ private:
 };
 
 const char let = 'L';
-const char quit = 'Q';
+const char quit = 'E';
 const char print = ';';
 const char number = '8';
 const char name = 'a';
 const int k = 1000;
+const double pi = 3.1516;
 
 Token Token_stream::get()
 {
@@ -37,15 +38,16 @@ Token Token_stream::get()
 	char ch;
 	cin >> ch;
 	switch (ch) {
-	case 'Q':
+	case 'E':
 	case 'L':
+	case 'F':
 	case '(': case ')': case '+': case '-': case '*': case '/': case '%': case ';': case '=': case 's': //Cases para los operadores u otras cositas
 		return Token(ch);// deja que cada personaje se represente a si mismo
 	case '.':
 	case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9':
 	{	
 		cin.unget();
-		double val;
+		int val;
 		cin >> val;// leer un número de punto flotante
 		return Token(number, val);//number representa el número
 	}
@@ -86,20 +88,20 @@ void Token_stream::ignore(char c)
 
 struct Variable {
 	string name;
-	double value;
-	Variable(string n, double v) :name(n), value(v) { }
+	int value;
+	Variable(string n, int v) :name(n), value(v) { }
 };
 
 vector<Variable> names;
 
-double get_value(string s)
+double get_value(string s) //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 {
 	for (int i = 0; i < names.size(); ++i)
 		if (names[i].name == s) return names[i].value;
 	error("get: undefined name ", s);
 }
 
-void set_value(string s, double d)
+void set_value(string s, int d) //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 {
 	for (int i = 0; i <= names.size(); ++i)
 		if (names[i].name == s) {
@@ -109,7 +111,7 @@ void set_value(string s, double d)
 	error("set: undefined name ", s);
 }
 
-bool is_declared(string s)
+bool is_declared(string s) //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 {
 	for (int i = 0; i < names.size(); ++i)
 		if (names[i].name == s) return true;
@@ -127,7 +129,7 @@ double primary()
 	{
 		case '(':
 		{	
-			double d = expression();
+			int d = expression();
 			t = ts.get();
 			if (t.kind != ')')
 			{
@@ -137,7 +139,7 @@ double primary()
 		}
 		case 's':
 		{
-			double d = expression();
+			int d = expression();
 			if (d > 0)
 			{
 				d = sqrt(d);
@@ -149,11 +151,29 @@ double primary()
 
 			}
 		}
+		case 'F':
+		{
+			int d = expression();
+			int num1 = 0;
+			int incre = 0;
+			int resu = 0;
+			cout << "Ingresa tu numero a incrementar:" << endl;
+			cin >> num1;
+			cout << "Ingresa el numero de veces a incrementar:" << endl;
+			cin >> incre;
+
+			for (int i = 0; i < incre; i++)
+			{
+				resu = resu + num1;
+			}
+			d = resu;
+			return d;
+		}
 		case '%':
 		{
-			double num1 = 0;
-			double num2 = 0;
-			double d = expression();
+			int num1 = 0;
+			int num2 = 0;
+			int d = expression();
 
 			cout << "Ingresa el numero a multiplicar:" << endl;
 			cin >> num1;
@@ -181,7 +201,7 @@ double primary()
 
 double term()
 {
-	double left = primary();
+	int left = primary();
 	Token t = ts.get();
 	while (true) 
 	{
@@ -193,7 +213,7 @@ double term()
 				break;
 			case '/':
 			{	
-				double d = primary();
+				int d = primary();
 				if (d == 0) error("divide by zero");
 				left /= d;
 				t = ts.get();
@@ -208,7 +228,7 @@ double term()
 
 double expression()
 {
-	double left = term();
+	int left = term();
 	Token t = ts.get();
 	while (true) 
 	{
@@ -277,14 +297,37 @@ void calculate()
 	}
 }
 
-int main()
+class Symbol_table
+{
+	vector <int> var_table;
+};
+
+void help()
 {
 	cout << "Ingresa los valores y al final ; para poder mostrar el resultado" << endl;
-	cout << "Si quieres salir ingresa Q" << endl;
+	cout << "Si quieres salir ingresa E" << endl;
 	cout << "Si quieres raiz cuadrada ingresa s" << endl;
 	cout << "Si da un primary expected, ingresa ; para reiniciar" << endl;
 	cout << "Ingresa % para poder iniciar el POW" << endl;
-
+	//1-Creo que le faltaria poder sacar el resultado de un número con un signo antes
+	//2-Creo que tambien no debería aceptar letras, solo números.
+	//3-Por último le faltaria solo mostrar un modo de incremento, para facilitar a los novatos en una suma
+}
+int main()
+{
+	char variable;
+	cout << "Ingresa los valores y al final ; para poder mostrar el resultado" << endl;
+	cout << "Si quieres salir ingresa E" << endl;
+	cout << "Si quieres raiz cuadrada ingresa s" << endl;
+	cout << "Si da un primary expected, ingresa ; para reiniciar" << endl;
+	cout << "Ingresa % para poder iniciar el POW" << endl;
+	cout << "Ingresa M para abrir la ayuda" << endl;
+	cout << "Ingresa F para abrir el incrementador" << endl;
+	cin >> variable;
+	if (variable == 'M')
+	{
+		help();
+	}
 	try 
 	{
 		calculate();
