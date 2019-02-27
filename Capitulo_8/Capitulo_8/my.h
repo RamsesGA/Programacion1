@@ -6,3 +6,5 @@ void print_foo();
 
 void print(int);
 
+void print2();
+
