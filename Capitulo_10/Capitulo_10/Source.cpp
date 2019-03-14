@@ -15,6 +15,7 @@ void Ejer1();
 void temperatura();
 void Ejer3();
 void Ejer4();
+void Ejer8();
 
 //Clase para representar puntos.
 class Point 
@@ -36,6 +37,7 @@ int main()
 
 	cout << "Ingresa\n 1 para usar el ifstream (modo lectura)\n 2 para el ofstream (creacion de archivos)" << endl;
 	cout << " 3 drill 2\n 4 Drill 4\n 5 Ejercicio 1\n 6 Ejercicio 2\n 7 Ejercicio 3\n 8 Ejercicio 4\n" << endl;
+	cout << " 9 Ejercicio 6\n" << endl;
 	cin >> valor;
 
 	switch (valor)
@@ -239,28 +241,27 @@ void temperatura()
 void Ejer3()
 {
 	vector <string> Datos;
+	ofstream Crear;
 	ifstream Lectura;
 	string DatosTemp;
 	int Resultado = 0;
 	int Contador = 0;
-	Lectura.open("raw_temps.txt", ios::in);
-	int i = 0;
-	while (!Lectura.eof())
-	{
-		getline(Lectura, DatosTemp);
-		if (Datos[i] == " ")
-		{
-			Contador++;
-		}
-		i++;
-		Datos.push_back(DatosTemp);
-	}
 
-	//for (int i = 0; i < Datos.size(); i++)
-	//{
-	//	cout << Contador << endl;
-	//}
-	Resultado = Resultado / Datos.size();
+	cout << "Ingresa el nombre del archivo con .txt" << endl;
+	cin >> DatosTemp;
+
+	ofstream ost{ DatosTemp };
+	Crear.open(DatosTemp, ios::out);
+
+	cout << "Ingresa los valores de la temperatura" << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		cin >> Contador;
+		Resultado = Resultado + Contador;
+	}
+	Resultado = Resultado / 5;
+
+	Crear << Resultado;
 
 	cout << "El promedio es: " << Resultado << endl;
 	cin.ignore();
@@ -299,5 +300,62 @@ void Ejer4()
 	cin.ignore();
 	cin.get();
 }
+//Ejercicio5
+//void Ejer5()
+//{
+//	// open an input file:
+//	cout << "Please enter input file name\n";
+//	string iname;
+//	cin >> iname;
+//	ifstream ifs{ iname };
+//	if (!ifs) error("can't open input file", iname);
+//	ifs.exceptions(ifs.exceptions() | ios_base::badbit); // throw for bad()
+//	// open an output file:
+//	cout << "Please enter output file name\n";
+//	string oname;
+//	cin >> oname;
+//	ofstream ofs{ oname };
+//	if (!ofs) error("can't open output file", oname);
+//	// read an arbitrary number of years:
+//	vector<Year> ys;
+//	while (true) {
+//		Year y; // get a freshly initialized Year each time around
+//		if (!(ifs >> y)) break;
+//		ys.push_back(y);
+//	}
+//	cout << "read " << ys.size() << " years of readings\n";
+//	for (Year& y : ys) print_year(ofs, y);
+//}
 
-//410
+void Ejer8()
+{
+	ifstream Lectura;
+	ifstream Lectura2;
+	ifstream Lectura3;
+	ofstream Enviar;
+	string Texto1;
+	string Texto2;
+	string Texto3;
+
+	Lectura.open("Conca1.txt", ios::in);
+	Lectura2.open("Conca2.txt", ios::in);
+	Lectura3.open("ResultadoConca.txt", ios::in);
+
+	getline(Lectura, Texto1);
+	getline(Lectura2, Texto2);
+	getline(Lectura3, Texto3);
+
+
+	Texto3 = Texto1;
+	Texto3 = Texto3 + Texto2;
+	Enviar.open("ResultadoConca.txt", ios::out);
+
+	Enviar << Texto3;
+
+	Lectura.close();
+	Lectura2.close();
+	Lectura3.close();
+	Enviar.close();
+	cin.ignore();
+	cin.get();
+}
